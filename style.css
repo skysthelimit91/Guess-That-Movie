@@ -1,0 +1,105 @@
+body {
+  background-color: #0073e5;
+  display: flex;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  margin-top: 57px;
+}
+
+.title {
+  color: #7ddc1f;
+  font-family: 'Courgette', cursive;
+  display: flex;
+  align-self: center;
+}
+
+#tv {
+  border-color: black;
+  border-style: solid;
+  border-radius: 30px;
+  background-image: url('https://media0.giphy.com/media/OVlFjmEDhx9rG/giphy.gif');
+  display: flex;
+  height: 300px;
+  width: 300px;
+  margin-left: 40px;
+}
+.antenna {
+  border-color: white;
+  border-style: solid;
+  height: 100px;
+  display: flex;
+}
+
+#stick1 {
+  transform: rotate(-12deg);
+  margin-right: 30px;
+}
+#stick2 {
+  transform: rotate(12deg);
+}
+#antholder {
+  display: flex;
+  margin-left: 255px;
+}
+#tvholder {
+  border-color: #7ddc1f;
+  border-style: solid;
+  border-radius: 30px;
+  background-color: orange;
+  width: 400px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80px;
+}
+#tvknob {
+  border-color: #7ddc1f;
+  border-style: dotted;
+  border-radius: 50px;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+}
+#table {
+  border-color: white;
+  border-style: solid;
+  display: flex;
+  width: 600px;
+  height: 200px;
+  align-items: flex-end;
+}
+.legs {
+  border-color: white;
+  border-style: solid;
+  height: 150px;
+  background-color: white;
+  display: flex;
+  position: absolute;
+}
+#legone {
+  margin-left: 500px;
+  width: 95px;
+}
+#legtwo {
+  width: 100px;
+}
+#underside {
+  border-color: white;
+  border-style: none;
+  background-color: white;
+  height: 58px;
+  width: 600px;
+  display: flex;
+  transform: rotate(180deg);
+  align-self: flex-start;
+}
+
