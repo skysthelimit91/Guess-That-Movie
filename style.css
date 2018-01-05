@@ -24,7 +24,7 @@ body {
   border-color: black;
   border-style: solid;
   border-radius: 30px;
-  background-image: url('https://media0.giphy.com/media/OVlFjmEDhx9rG/giphy.gif');
+  background: url('https://media0.giphy.com/media/OVlFjmEDhx9rG/giphy.gif');
   display: flex;
   height: 300px;
   width: 300px;
@@ -102,4 +102,23 @@ body {
   transform: rotate(180deg);
   align-self: flex-start;
 }
-
+#questionholder {
+  border-color: orange;
+  border-style: solid;
+  width: 400px;
+  height: 500px;
+  position: fixed;
+  margin-left: 950px;
+}
+.vidholder {
+  opacity: 0;
+  height: 300px;
+  width: 300px;
+  border-radius: 30px;
+  position: fixed;
+}
+.play {
+  border-color: orange;
+  border-style: solid;
+  width: 20px;
+}
