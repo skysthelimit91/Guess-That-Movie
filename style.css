@@ -109,6 +109,8 @@ body {
   height: 500px;
   position: fixed;
   margin-left: 950px;
+  background-color: orange;
+  align-content: center;
 }
 .vidholder {
   opacity: 0;
@@ -118,7 +120,24 @@ body {
   position: fixed;
 }
 .play {
-  border-color: orange;
+  border-color: red;
   border-style: solid;
   width: 20px;
+  margin-top: 520px;
+  margin-left: 1330px;
+  position: fixed;
+}
+.slideShow {
+  border-color: black;
+  border-style: solid;
+}
+#slide1 {
+  position: fixed;
+}
+#slide2 {
+  position: fixed;
+  display: none;
+}
+#button2 {
+  margin-left: 960px;
 }
