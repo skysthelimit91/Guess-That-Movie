@@ -133,11 +133,20 @@ body {
 }
 #slide1 {
   position: fixed;
+  display: none;
 }
 #slide2 {
   position: fixed;
   display: none;
 }
+#slide3 {
+  position: fixed;
+  display: none;
+}
+#button1 {
+  width: 100px;
+}
+
 #button2 {
   margin-left: 960px;
 }
