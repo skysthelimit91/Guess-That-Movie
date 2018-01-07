@@ -149,6 +149,8 @@ body {
 
 #button2 {
   margin-left: 960px;
+  width: 100px;
+  display: none;
 }
 #score {
   position: fixed;

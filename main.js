@@ -56,6 +56,7 @@ function cantGoYet() {
   var question2answers = document.getElementsByClassName('question2');
   var question3answers = document.getElementsByClassName('question3');
   var scoreLocation = document.querySelector('#score');
+  button2Location.style.display = 'block';
   if (counter == 1) {
     if (
       question1answers[0].checked == false && //This function is looking though all the radio buttons for the first question
@@ -66,6 +67,7 @@ function cantGoYet() {
       button1Location.style.display = 'none';
     } else {
       button1Location.style.display = 'block'; //otherwise, my next button is displayed and the user can proceed to the next question
+      button2Location.style.display = 'none';
       if (question1answers[3].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Score = ' + scoreCounter;
@@ -92,6 +94,7 @@ function cantGoYet() {
       button1Location.style.display = 'none';
     } else {
       button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
       if (question2answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Score = ' + scoreCounter;
@@ -118,6 +121,7 @@ function cantGoYet() {
       button1Location.style.display = 'none';
     } else {
       button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
       if (question3answers[2].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Score = ' + scoreCounter;
