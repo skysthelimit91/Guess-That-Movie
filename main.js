@@ -1,5 +1,6 @@
 var videoSources = ['godfather2.mp4', 'GranTorino.mp4'];
 var button1Location = document.getElementById('button1');
+var button2Location = document.getElementById('button2');
 var nextButton = document.getElementById('button1');
 var vidLocation = document.getElementById('vid');
 var tvLocation = document.getElementById('tv');
@@ -11,6 +12,7 @@ var counter = 0;
 
 button1Location.addEventListener('click', countNumber);
 button1Location.addEventListener('click', nextQuestion);
+button2Location.addEventListener('click', cantGoYet);
 button1Location.addEventListener('click', cantGoYet);
 
 function countNumber() {
@@ -29,20 +31,19 @@ function nextQuestion() {
   slide1Location.style.display = 'block';
   button1Location.innerText = 'Next';
 }
-('input[name$="value"]');
 
 function cantGoYet() {
   var radioLocation = document.querySelectorAll('input');
   var question1answers = document.getElementsByClassName('question1');
 
   if (
-    question1answers[0].checked !== true &&
-    question1answers[1].checked !== true &&
-    question1answers[2].checked !== true &&
-    question1answers[3].checked !== true
+    question1answers[0].checked == false &&
+    question1answers[1].checked == false &&
+    question1answers[2].checked == false &&
+    question1answers[3].checked == false
   ) {
-    console.log('hmmm');
+    button1Location.style.display = 'none';
   } else {
-    console.log('okkkkk');
+    button1Location.style.display = 'block';
   }
 }
