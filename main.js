@@ -11,6 +11,7 @@ var counter = 0;
 
 button1Location.addEventListener('click', countNumber);
 button1Location.addEventListener('click', nextQuestion);
+button1Location.addEventListener('click', cantGoYet);
 
 function countNumber() {
   counter++;
@@ -27,13 +28,21 @@ function nextQuestion() {
   vidLocation.style.opacity = 1;
   slide1Location.style.display = 'block';
   button1Location.innerText = 'Next';
-  cantGoYet();
 }
+('input[name$="value"]');
 
 function cantGoYet() {
-  var radioLocation = document.querySelectorAll('input').name == 'question1';
-  if (radioLocation.checked == true) {
-    button1Location.style.display = 'none';
-  } else if (radioLocation.checked == false)
-    button1Location.style.display = 'block';
+  var radioLocation = document.querySelectorAll('input');
+  var question1answers = document.getElementsByClassName('question1');
+
+  if (
+    question1answers[0].checked !== true &&
+    question1answers[1].checked !== true &&
+    question1answers[2].checked !== true &&
+    question1answers[3].checked !== true
+  ) {
+    console.log('hmmm');
+  } else {
+    console.log('okkkkk');
+  }
 }
