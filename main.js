@@ -27,11 +27,13 @@ function nextQuestion() {
   vidLocation.style.opacity = 1;
   slide1Location.style.display = 'block';
   button1Location.innerText = 'Next';
+  cantGoYet();
 }
 
 function cantGoYet() {
-  var radioLocation = document.querySelectorAll('input')[0];
-  if (radioLocation.checked !== true) {
-    button1Location.removeEventListener('click', nextQuestion);
-  }
+  var radioLocation = document.querySelectorAll('input').name == 'question1';
+  if (radioLocation.checked == true) {
+    button1Location.style.display = 'none';
+  } else if (radioLocation.checked == false)
+    button1Location.style.display = 'block';
 }
