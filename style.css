@@ -150,3 +150,7 @@ body {
 #button2 {
   margin-left: 960px;
 }
+#score {
+  position: fixed;
+  color: orange;
+}

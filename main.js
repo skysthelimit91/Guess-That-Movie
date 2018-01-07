@@ -10,6 +10,7 @@ var slide2Location = document.getElementById('slide2');
 
 var counter = 0; //I use this counter throughout my code in order to let my functions know when (on which slide) they
 //need to execute certain code
+var scoreCounter = 0; //This counter is strictly used for incrementing points earned
 button1Location.addEventListener('click', countNumber);
 button1Location.addEventListener('click', nextQuestion);
 button2Location.addEventListener('click', cantGoYet); //My submit button only needs to be able to have access to this one function
@@ -54,7 +55,7 @@ function cantGoYet() {
   var question1answers = document.getElementsByClassName('question1');
   var question2answers = document.getElementsByClassName('question2');
   var question3answers = document.getElementsByClassName('question3');
-
+  var scoreLocation = document.querySelector('#score');
   if (counter == 1) {
     if (
       question1answers[0].checked == false && //This function is looking though all the radio buttons for the first question
@@ -66,8 +67,18 @@ function cantGoYet() {
     } else {
       button1Location.style.display = 'block'; //otherwise, my next button is displayed and the user can proceed to the next question
       if (question1answers[3].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Score = ' + scoreCounter;
         alert('Correct!');
+        question1answers[0].disabled = true;
+        question1answers[1].disabled = true;
+        question1answers[2].disabled = true;
+        question1answers[3].disabled = true;
       } else {
+        question1answers[0].disabled = true;
+        question1answers[1].disabled = true;
+        question1answers[2].disabled = true;
+        question1answers[3].disabled = true;
         alert('Wrong!');
       }
     }
@@ -81,6 +92,21 @@ function cantGoYet() {
       button1Location.style.display = 'none';
     } else {
       button1Location.style.display = 'block';
+      if (question2answers[0].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Score = ' + scoreCounter;
+        alert('Correct!');
+        question2answers[0].disabled = true;
+        question2answers[1].disabled = true;
+        question2answers[2].disabled = true;
+        question2answers[3].disabled = true;
+      } else {
+        question2answers[0].disabled = true;
+        question2answers[1].disabled = true;
+        question2answers[2].disabled = true;
+        question2answers[3].disabled = true;
+        alert('Wrong!');
+      }
     }
   } else if (counter == 3) {
     if (
@@ -92,6 +118,21 @@ function cantGoYet() {
       button1Location.style.display = 'none';
     } else {
       button1Location.style.display = 'block';
+      if (question3answers[2].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Score = ' + scoreCounter;
+        alert('Correct!');
+        question3answers[0].disabled = true;
+        question3answers[1].disabled = true;
+        question3answers[2].disabled = true;
+        question3answers[3].disabled = true;
+      } else {
+        question3answers[0].disabled = true;
+        question3answers[1].disabled = true;
+        question3answers[2].disabled = true;
+        question3answers[3].disabled = true;
+        alert('Wrong!');
+      }
     }
   }
 }
