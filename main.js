@@ -1,16 +1,22 @@
-var videoSources = ['godfather2.mp4', 'GranTorino.mp4', 'goodwillhunting.mp4'];
+var videoSources = [
+  'godfather2.mp4',
+  'GranTorino.mp4',
+  'goodwillhunting.mp4',
+  'Terminator2.mp4',
+  'demolitionman.mp4',
+  'Rushhour.mp4',
+];
 var button1Location = document.getElementById('button1');
 var button2Location = document.getElementById('button2');
 var nextButton = document.getElementById('button1');
 var vidLocation = document.getElementById('vid');
 var tvLocation = document.getElementById('tv');
 var allSlides = document.getElementsByClassName('slideShow');
-var slide1Location = document.getElementById('slide1');
-var slide2Location = document.getElementById('slide2');
 
 var counter = 0; //I use this counter throughout my code in order to let my functions know when (on which slide) they
 //need to execute certain code
-var scoreCounter = 0; //This counter is strictly used for incrementing points earned
+var scoreCounter = 0; //This counter is strictly used for incrementing points earned when a user answers correctly
+var wrongCounter = 0;
 button1Location.addEventListener('click', countNumber);
 button1Location.addEventListener('click', nextQuestion);
 button2Location.addEventListener('click', cantGoYet); //My submit button only needs to be able to have access to this one function
@@ -25,6 +31,12 @@ function countNumber() {
     vidLocation.src = videoSources[1];
   } else if (counter == 3) {
     vidLocation.src = videoSources[2];
+  } else if (counter == 4) {
+    vidLocation.src = videoSources[3];
+  } else if (counter == 5) {
+    vidLocation.src = videoSources[4];
+  } else if (counter == 6) {
+    vidLocation.src = videoSources[5];
   }
   vidLocation.play(); //this will play whatever the source file for video element is at the time this is invoked.
 }
@@ -46,6 +58,24 @@ function nextQuestion() {
       allSlides[2].style.display = 'block';
       allSlides[1].style.display = 'none';
       allSlides[0].style.display = 'none';
+    } else if (counter == 4) {
+      allSlides[3].style.display = 'block';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
+    } else if (counter == 5) {
+      allSlides[4].style.display = 'block';
+      allSlides[3].style.display = 'none';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
+    } else if (counter == 6) {
+      allSlides[5].style.display = 'block';
+      allSlides[4].style.display = 'none';
+      allSlides[3].style.display = 'none';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
     }
   }
 }
@@ -55,7 +85,12 @@ function cantGoYet() {
   var question1answers = document.getElementsByClassName('question1');
   var question2answers = document.getElementsByClassName('question2');
   var question3answers = document.getElementsByClassName('question3');
-  var scoreLocation = document.querySelector('#score');
+  var question4answers = document.getElementsByClassName('question4');
+  var question5answers = document.getElementsByClassName('question5');
+  var question6answers = document.getElementsByClassName('question6');
+
+  var scoreLocation = document.querySelector('#right');
+  var wrongLocation = document.querySelector('#wrong');
   button2Location.style.display = 'block';
   if (counter == 1) {
     if (
@@ -70,7 +105,7 @@ function cantGoYet() {
       button2Location.style.display = 'none';
       if (question1answers[3].checked == true) {
         scoreCounter += Number('1');
-        scoreLocation.innerText = 'Score = ' + scoreCounter;
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
         alert('Correct!');
         question1answers[0].disabled = true;
         question1answers[1].disabled = true;
@@ -81,6 +116,8 @@ function cantGoYet() {
         question1answers[1].disabled = true;
         question1answers[2].disabled = true;
         question1answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
         alert('Wrong!');
       }
     }
@@ -97,7 +134,7 @@ function cantGoYet() {
       button2Location.style.display = 'none';
       if (question2answers[0].checked == true) {
         scoreCounter += Number('1');
-        scoreLocation.innerText = 'Score = ' + scoreCounter;
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
         alert('Correct!');
         question2answers[0].disabled = true;
         question2answers[1].disabled = true;
@@ -108,7 +145,10 @@ function cantGoYet() {
         question2answers[1].disabled = true;
         question2answers[2].disabled = true;
         question2answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
         alert('Wrong!');
+        checkLoss();
       }
     }
   } else if (counter == 3) {
@@ -124,7 +164,7 @@ function cantGoYet() {
       button2Location.style.display = 'none';
       if (question3answers[2].checked == true) {
         scoreCounter += Number('1');
-        scoreLocation.innerText = 'Score = ' + scoreCounter;
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
         alert('Correct!');
         question3answers[0].disabled = true;
         question3answers[1].disabled = true;
@@ -135,8 +175,113 @@ function cantGoYet() {
         question3answers[1].disabled = true;
         question3answers[2].disabled = true;
         question3answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
         alert('Wrong!');
+        checkLoss();
       }
     }
+  } else if (counter == 4) {
+    if (
+      question4answers[0].checked == false && // I simply repeat these steps for each number of the counter
+      question4answers[1].checked == false && // (again, each number representing a different slide)
+      question4answers[2].checked == false &&
+      question4answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question4answers[0].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question4answers[0].disabled = true;
+        question4answers[1].disabled = true;
+        question4answers[2].disabled = true;
+        question4answers[3].disabled = true;
+      } else {
+        question4answers[0].disabled = true;
+        question4answers[1].disabled = true;
+        question4answers[2].disabled = true;
+        question4answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+      }
+    }
+  } else if (counter == 5) {
+    if (
+      question5answers[0].checked == false &&
+      question5answers[1].checked == false &&
+      question5answers[2].checked == false &&
+      question5answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question5answers[0].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question5answers[0].disabled = true;
+        question5answers[1].disabled = true;
+        question5answers[2].disabled = true;
+        question5answers[3].disabled = true;
+      } else {
+        question5answers[0].disabled = true;
+        question5answers[1].disabled = true;
+        question5answers[2].disabled = true;
+        question5answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+      }
+    }
+  } else if (counter == 6) {
+    if (
+      question6answers[0].checked == false && // I simply repeat these steps for each number of the counter
+      question6answers[1].checked == false && // (again, each number representing a different slide)
+      question6answers[2].checked == false &&
+      question6answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question6answers[1].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question6answers[0].disabled = true;
+        question6answers[1].disabled = true;
+        question6answers[2].disabled = true;
+        question6answers[3].disabled = true;
+      } else {
+        question6answers[0].disabled = true;
+        question6answers[1].disabled = true;
+        question6answers[2].disabled = true;
+        question6answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+      }
+    }
+  }
+}
+
+function checkLoss() {
+  if (wrongCounter >= 3) {
+    var soundLocation = document.querySelector('audio');
+    var bodylocation = document.querySelector('body');
+    bodylocation.classList.add('gameover');
+    var containerLocation = document.getElementById('container');
+    container.style.display = 'none';
+    vidLocation.pause();
+    soundLocation.loop = true;
   }
 }

@@ -4,13 +4,18 @@ body {
   overflow: hidden;
 }
 
-.container {
+#container {
   height: 100%;
   width: 100%;
   display: flex;
   align-items: left;
   flex-direction: column;
   margin-top: 57px;
+}
+.gameover {
+  background-image: url(https://vignette.wikia.nocookie.net/epicrapbattlesofhistory/images/3/3c/Film_reel.gif/revision/latest?cb=20160128012524);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .title {
@@ -24,7 +29,7 @@ body {
   border-color: black;
   border-style: solid;
   border-radius: 30px;
-  background: url('https://media0.giphy.com/media/OVlFjmEDhx9rG/giphy.gif');
+  background: url('http://media0.giphy.com/media/OVlFjmEDhx9rG/giphy.gif');
   display: flex;
   height: 300px;
   width: 300px;
@@ -130,19 +135,10 @@ body {
 .slideShow {
   border-color: black;
   border-style: solid;
-}
-#slide1 {
   position: fixed;
   display: none;
 }
-#slide2 {
-  position: fixed;
-  display: none;
-}
-#slide3 {
-  position: fixed;
-  display: none;
-}
+
 #button1 {
   width: 100px;
 }
@@ -152,7 +148,13 @@ body {
   width: 100px;
   display: none;
 }
-#score {
+#right {
   position: fixed;
   color: orange;
 }
+#wrong {
+  position: fixed;
+  color: orange;
+  padding-top: 40px;
+}
+
