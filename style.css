@@ -1,7 +1,8 @@
 body {
-  background-color: #009999;
+  
   display: flex;
   overflow: hidden;
+  background-color: black
   
 }
 
@@ -14,16 +15,28 @@ body {
   margin-top: 57px;
 }
 .gameover {
-  background-image: url('https://i.ytimg.com/vi/vJaAy3jmEx8/maxresdefault.jpg');
+  background-image: url('http://codplayercards.com/wp-content/uploads/2014/10/gameover8bit.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin-left: 300px;
+  position:fixed;
+  animation: fadein 1s;
+
 }
 
 .gamewinner {
 
-  background-image: url('https://m.popkey.co/6b3149/8wMw_f-maxage-0_s-200x150.gif?c=popkey-web&p=popkey&i=nfl-sports&l=search&f=.gif');
+  background-image: url('https://www.askgamblers.com/uploads/original/you-win-casino-2-55a3d1e27528f7b15c8b4570.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  position: fixed;
+  overflow: auto;
+
+
+
 }
 
 .title {
@@ -158,7 +171,7 @@ body {
 }
 #right {
   position: fixed;
-  color: black;
+  color: white;
   font-family: 'Press Start 2P', cursive;
 }
 #wrong {
@@ -169,8 +182,8 @@ body {
 }
 #tryAgain {
   position: fixed;
-  margin-top: 500px;
-  margin-left: 500px;
+  margin-top: 700px;
+  margin-left: 750px;
   display: none;
 }
 #indexTitle {

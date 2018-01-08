@@ -540,6 +540,12 @@ function cantGoYet() {
         question11answers[1].disabled = true;
         question11answers[2].disabled = true;
         question11answers[3].disabled = true;
+        checkWin();
+        if (scoreCounter == 10) {
+          alert('10 Right! You win!');
+          soundLocation.src = 'victory.mp3';
+          soundLocation.play();
+        }
       } else {
         question11answers[0].disabled = true;
         question11answers[1].disabled = true;
@@ -573,6 +579,12 @@ function cantGoYet() {
         question12answers[1].disabled = true;
         question12answers[2].disabled = true;
         question12answers[3].disabled = true;
+        checkWin();
+        if (scoreCounter == 10) {
+          alert('10 Right! You win!');
+          soundLocation.src = 'victory.mp3';
+          soundLocation.play();
+        }
       } else {
         question12answers[0].disabled = true;
         question12answers[1].disabled = true;
@@ -606,6 +618,12 @@ function cantGoYet() {
         question13answers[1].disabled = true;
         question13answers[2].disabled = true;
         question13answers[3].disabled = true;
+        checkWin();
+        if (scoreCounter == 10) {
+          alert('10 Right! You win!');
+          soundLocation.src = 'victory.mp3';
+          soundLocation.play();
+        }
       } else {
         question13answers[0].disabled = true;
         question13answers[1].disabled = true;
@@ -642,6 +660,8 @@ function checkWin() {
     var containerLocation = document.getElementById('container');
     container.style.display = 'none';
     vidLocation.pause();
+    tryAgainLocation.innerText = 'Play Again?';
+    tryAgainLocation.style.display = 'block';
   }
 }
 
