@@ -213,7 +213,6 @@ function cantGoYet() {
       if (question1answers[3].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question1answers[0].disabled = true;
         question1answers[1].disabled = true;
         question1answers[2].disabled = true;
@@ -225,7 +224,6 @@ function cantGoYet() {
         question1answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
       }
     }
   } else if (counter == 2) {
@@ -242,7 +240,6 @@ function cantGoYet() {
       if (question2answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question2answers[0].disabled = true;
         question2answers[1].disabled = true;
         question2answers[2].disabled = true;
@@ -254,7 +251,6 @@ function cantGoYet() {
         question2answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
       }
     }
   } else if (counter == 3) {
@@ -271,7 +267,6 @@ function cantGoYet() {
       if (question3answers[2].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question3answers[0].disabled = true;
         question3answers[1].disabled = true;
         question3answers[2].disabled = true;
@@ -283,9 +278,9 @@ function cantGoYet() {
         question3answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.play();
         }
       }
@@ -304,7 +299,6 @@ function cantGoYet() {
       if (question4answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question4answers[0].disabled = true;
         question4answers[1].disabled = true;
         question4answers[2].disabled = true;
@@ -316,9 +310,9 @@ function cantGoYet() {
         question4answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk2.mp3';
           soundLocation.play();
         }
@@ -338,7 +332,6 @@ function cantGoYet() {
       if (question5answers[3].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question5answers[0].disabled = true;
         question5answers[1].disabled = true;
         question5answers[2].disabled = true;
@@ -350,9 +343,9 @@ function cantGoYet() {
         question5answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk3.mp3';
           soundLocation.play();
         }
@@ -372,7 +365,6 @@ function cantGoYet() {
       if (question6answers[1].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question6answers[0].disabled = true;
         question6answers[1].disabled = true;
         question6answers[2].disabled = true;
@@ -384,9 +376,9 @@ function cantGoYet() {
         question6answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk4.mp3';
           soundLocation.play();
         }
@@ -406,7 +398,6 @@ function cantGoYet() {
       if (question7answers[2].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question7answers[0].disabled = true;
         question7answers[1].disabled = true;
         question7answers[2].disabled = true;
@@ -418,9 +409,9 @@ function cantGoYet() {
         question7answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk5.mp3';
           soundLocation.play();
         }
@@ -440,7 +431,6 @@ function cantGoYet() {
       if (question8answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question8answers[0].disabled = true;
         question8answers[1].disabled = true;
         question8answers[2].disabled = true;
@@ -452,9 +442,9 @@ function cantGoYet() {
         question8answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk3.mp3';
           soundLocation.play();
         }
@@ -474,7 +464,6 @@ function cantGoYet() {
       if (question9answers[3].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question9answers[0].disabled = true;
         question9answers[1].disabled = true;
         question9answers[2].disabled = true;
@@ -486,9 +475,9 @@ function cantGoYet() {
         question9answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk3.mp3';
           soundLocation.play();
         }
@@ -508,7 +497,6 @@ function cantGoYet() {
       if (question10answers[1].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question10answers[0].disabled = true;
         question10answers[1].disabled = true;
         question10answers[2].disabled = true;
@@ -520,9 +508,9 @@ function cantGoYet() {
         question10answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk3.mp3';
           soundLocation.play();
         }
@@ -542,7 +530,6 @@ function cantGoYet() {
       if (question11answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question11answers[0].disabled = true;
         question11answers[1].disabled = true;
         question11answers[2].disabled = true;
@@ -554,9 +541,9 @@ function cantGoYet() {
         question11answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk3.mp3';
           soundLocation.play();
         }
@@ -576,7 +563,6 @@ function cantGoYet() {
       if (question12answers[2].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question12answers[0].disabled = true;
         question12answers[1].disabled = true;
         question12answers[2].disabled = true;
@@ -588,9 +574,9 @@ function cantGoYet() {
         question12answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk3.mp3';
           soundLocation.play();
         }
@@ -610,7 +596,6 @@ function cantGoYet() {
       if (question13answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
-        alert('Correct!');
         question13answers[0].disabled = true;
         question13answers[1].disabled = true;
         question13answers[2].disabled = true;
@@ -622,9 +607,9 @@ function cantGoYet() {
         question13answers[3].disabled = true;
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
-        alert('Wrong!');
         checkLoss();
         if (wrongCounter == 3) {
+          alert('3 Wrong! You lose!');
           soundLocation.src = 'mk4.mp3';
           soundLocation.play();
         }
