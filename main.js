@@ -501,6 +501,12 @@ function cantGoYet() {
         question10answers[1].disabled = true;
         question10answers[2].disabled = true;
         question10answers[3].disabled = true;
+        checkWin();
+        if (scoreCounter == 10) {
+          alert('10 Right! You win!');
+          soundLocation.src = 'victory.mp3';
+          soundLocation.play();
+        }
       } else {
         question10answers[0].disabled = true;
         question10answers[1].disabled = true;
@@ -626,6 +632,16 @@ function checkLoss() {
     container.style.display = 'none';
     vidLocation.pause();
     tryAgainLocation.style.display = 'block';
+  }
+}
+
+function checkWin() {
+  if (scoreCounter == 10) {
+    var bodylocation = document.querySelector('body');
+    bodylocation.classList.add('gamewinner');
+    var containerLocation = document.getElementById('container');
+    container.style.display = 'none';
+    vidLocation.pause();
   }
 }
 

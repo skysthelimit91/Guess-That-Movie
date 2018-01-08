@@ -2,6 +2,7 @@ body {
   background-color: #009999;
   display: flex;
   overflow: hidden;
+  
 }
 
 #container {
@@ -18,11 +19,19 @@ body {
   background-size: cover;
 }
 
+.gamewinner {
+
+  background-image: url('https://m.popkey.co/6b3149/8wMw_f-maxage-0_s-200x150.gif?c=popkey-web&p=popkey&i=nfl-sports&l=search&f=.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .title {
   color: #ff3333;
   font-family: 'Press Start 2P', cursive;
   display: flex;
-  padding-left: 390px;
+  padding-left: 270px;
+  margin-top: 50px;
   
 
 }
@@ -66,8 +75,6 @@ body {
   justify-content: center;
   align-items: center;
   margin-left: 80px;
-  
-
 }
 #tvknob {
   border-color: black;
@@ -172,6 +179,8 @@ body {
   text-decoration: underline;
   text-decoration-color: white;
   display: flex;
+  animation: fadein 1s;
+
 }
 #indexContainer {
   height: 100%;
@@ -198,8 +207,32 @@ body {
   padding-top: 350px;
   padding-left: 620px;
   color: #ff3333;
+  animation: blink 1s linear infinite;
   
 }
 a{
   text-decoration: none;
+}
+
+@keyframes fadein{
+
+  0%{
+    margin: -200px;
+    
+    
+  }
+
+  100%{
+    
+    
+  }
+
+}
+
+@keyframes blink{
+
+    0% { opacity: 1; }
+  50% { opacity: 1; }
+  50.01% { opacity: 0; }
+  100% { opacity: 0; }
 }
