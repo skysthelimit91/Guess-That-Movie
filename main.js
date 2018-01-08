@@ -8,6 +8,10 @@ var videoSources = [
   'Independence.mp4',
   'Goodfellas.mp4',
   'princess.mp4',
+  'suspects.mp4',
+  'fifthelement.mp4',
+  'kbv2.mp4',
+  'powers.mp4',
 ];
 var button1Location = document.getElementById('button1');
 var button2Location = document.getElementById('button2');
@@ -46,8 +50,16 @@ function countNumber() {
     vidLocation.src = videoSources[6];
   } else if (counter == 8) {
     vidLocation.src = videoSources[7];
-  } else if (counter == 8) {
-    vidLocation.src = videoSources[7];
+  } else if (counter == 9) {
+    vidLocation.src = videoSources[8];
+  } else if (counter == 10) {
+    vidLocation.src = videoSources[9];
+  } else if (counter == 11) {
+    vidLocation.src = videoSources[10];
+  } else if (counter == 12) {
+    vidLocation.src = videoSources[11];
+  } else if (counter == 13) {
+    vidLocation.src = videoSources[12];
   }
   vidLocation.play(); //this will play whatever the source file for video element is at the time this is invoked.
 }
@@ -97,6 +109,66 @@ function nextQuestion() {
       allSlides[0].style.display = 'none';
     } else if (counter == 8) {
       allSlides[7].style.display = 'block';
+      allSlides[6].style.display = 'none';
+      allSlides[5].style.display = 'none';
+      allSlides[4].style.display = 'none';
+      allSlides[3].style.display = 'none';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
+    } else if (counter == 9) {
+      allSlides[8].style.display = 'block';
+      allSlides[7].style.display = 'none';
+      allSlides[6].style.display = 'none';
+      allSlides[5].style.display = 'none';
+      allSlides[4].style.display = 'none';
+      allSlides[3].style.display = 'none';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
+    } else if (counter == 10) {
+      allSlides[9].style.display = 'block';
+      allSlides[8].style.display = 'none';
+      allSlides[7].style.display = 'none';
+      allSlides[6].style.display = 'none';
+      allSlides[5].style.display = 'none';
+      allSlides[4].style.display = 'none';
+      allSlides[3].style.display = 'none';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
+    } else if (counter == 11) {
+      allSlides[10].style.display = 'block';
+      allSlides[9].style.display = 'none';
+      allSlides[8].style.display = 'none';
+      allSlides[7].style.display = 'none';
+      allSlides[6].style.display = 'none';
+      allSlides[5].style.display = 'none';
+      allSlides[4].style.display = 'none';
+      allSlides[3].style.display = 'none';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
+    } else if (counter == 12) {
+      allSlides[11].style.display = 'block';
+      allSlides[10].style.display = 'none';
+      allSlides[9].style.display = 'none';
+      allSlides[8].style.display = 'none';
+      allSlides[7].style.display = 'none';
+      allSlides[6].style.display = 'none';
+      allSlides[5].style.display = 'none';
+      allSlides[4].style.display = 'none';
+      allSlides[3].style.display = 'none';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
+    } else if (counter == 13) {
+      allSlides[12].style.display = 'block';
+      allSlides[11].style.display = 'none';
+      allSlides[10].style.display = 'none';
+      allSlides[9].style.display = 'none';
+      allSlides[8].style.display = 'none';
+      allSlides[7].style.display = 'none';
       allSlides[6].style.display = 'none';
       allSlides[5].style.display = 'none';
       allSlides[4].style.display = 'none';
@@ -384,6 +456,176 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           soundLocation.src = 'mk3.mp3';
+          soundLocation.play();
+        }
+      }
+    }
+  } else if (counter == 9) {
+    if (
+      question9answers[0].checked == false &&
+      question9answers[1].checked == false &&
+      question9answers[2].checked == false &&
+      question9answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question9answers[3].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question9answers[0].disabled = true;
+        question9answers[1].disabled = true;
+        question9answers[2].disabled = true;
+        question9answers[3].disabled = true;
+      } else {
+        question9answers[0].disabled = true;
+        question9answers[1].disabled = true;
+        question9answers[2].disabled = true;
+        question9answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk3.mp3';
+          soundLocation.play();
+        }
+      }
+    }
+  } else if (counter == 10) {
+    if (
+      question10answers[0].checked == false &&
+      question10answers[1].checked == false &&
+      question10answers[2].checked == false &&
+      question10answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question10answers[1].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question10answers[0].disabled = true;
+        question10answers[1].disabled = true;
+        question10answers[2].disabled = true;
+        question10answers[3].disabled = true;
+      } else {
+        question10answers[0].disabled = true;
+        question10answers[1].disabled = true;
+        question10answers[2].disabled = true;
+        question10answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk3.mp3';
+          soundLocation.play();
+        }
+      }
+    }
+  } else if (counter == 11) {
+    if (
+      question11answers[0].checked == false &&
+      question11answers[1].checked == false &&
+      question11answers[2].checked == false &&
+      question11answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question11answers[0].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question11answers[0].disabled = true;
+        question11answers[1].disabled = true;
+        question11answers[2].disabled = true;
+        question11answers[3].disabled = true;
+      } else {
+        question11answers[0].disabled = true;
+        question11answers[1].disabled = true;
+        question11answers[2].disabled = true;
+        question11answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk3.mp3';
+          soundLocation.play();
+        }
+      }
+    }
+  } else if (counter == 12) {
+    if (
+      question12answers[0].checked == false &&
+      question12answers[1].checked == false &&
+      question12answers[2].checked == false &&
+      question12answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question12answers[2].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question12answers[0].disabled = true;
+        question12answers[1].disabled = true;
+        question12answers[2].disabled = true;
+        question12answers[3].disabled = true;
+      } else {
+        question12answers[0].disabled = true;
+        question12answers[1].disabled = true;
+        question12answers[2].disabled = true;
+        question12answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk3.mp3';
+          soundLocation.play();
+        }
+      }
+    }
+  } else if (counter == 13) {
+    if (
+      question13answers[0].checked == false && // I simply repeat these steps for each number of the counter
+      question13answers[1].checked == false && // (again, each number representing a different slide)
+      question13answers[2].checked == false &&
+      question13answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question13answers[0].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question13answers[0].disabled = true;
+        question13answers[1].disabled = true;
+        question13answers[2].disabled = true;
+        question13answers[3].disabled = true;
+      } else {
+        question13answers[0].disabled = true;
+        question13answers[1].disabled = true;
+        question13answers[2].disabled = true;
+        question13answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk4.mp3';
           soundLocation.play();
         }
       }
