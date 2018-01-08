@@ -19,11 +19,10 @@ body {
 }
 
 .title {
-  color: #ff3333;
+  color: white;
   font-family: 'Courgette', cursive;
   display: flex;
   align-self: center;
-  background-color: white;
 }
 
 #tv {
@@ -100,7 +99,7 @@ body {
 }
 #underside {
   border-color: black;
-  border-style: none;
+  border-style: solid;
   background-color: #ff3333;
   height: 58px;
   width: 600px;
@@ -128,8 +127,7 @@ body {
   border-color: red;
   border-style: solid;
   width: 20px;
-  margin-top: 520px;
-  margin-left: 1330px;
+  margin-top: 420px;
   position: fixed;
 }
 .slideShow {
@@ -139,6 +137,7 @@ body {
 
 #button1 {
   width: 100px;
+  margin-left: 1250px;
 }
 
 #button2 {
@@ -148,11 +147,11 @@ body {
 }
 #right {
   position: fixed;
-  color: white;
+  color: black;
 }
 #wrong {
   position: fixed;
-  color: red;
+  color: #ff3333;
   padding-top: 40px;
 }
 #tryAgain {

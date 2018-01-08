@@ -5,6 +5,9 @@ var videoSources = [
   'Terminator2.mp4',
   'demolitionman.mp4',
   'Rushhour.mp4',
+  'Independence.mp4',
+  'Goodfellas.mp4',
+  'princess.mp4',
 ];
 var button1Location = document.getElementById('button1');
 var button2Location = document.getElementById('button2');
@@ -39,6 +42,12 @@ function countNumber() {
     vidLocation.src = videoSources[4];
   } else if (counter == 6) {
     vidLocation.src = videoSources[5];
+  } else if (counter == 7) {
+    vidLocation.src = videoSources[6];
+  } else if (counter == 8) {
+    vidLocation.src = videoSources[7];
+  } else if (counter == 8) {
+    vidLocation.src = videoSources[7];
   }
   vidLocation.play(); //this will play whatever the source file for video element is at the time this is invoked.
 }
@@ -78,6 +87,23 @@ function nextQuestion() {
       allSlides[2].style.display = 'none';
       allSlides[1].style.display = 'none';
       allSlides[0].style.display = 'none';
+    } else if (counter == 7) {
+      allSlides[6].style.display = 'block';
+      allSlides[5].style.display = 'none';
+      allSlides[4].style.display = 'none';
+      allSlides[3].style.display = 'none';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
+    } else if (counter == 8) {
+      allSlides[7].style.display = 'block';
+      allSlides[6].style.display = 'none';
+      allSlides[5].style.display = 'none';
+      allSlides[4].style.display = 'none';
+      allSlides[3].style.display = 'none';
+      allSlides[2].style.display = 'none';
+      allSlides[1].style.display = 'none';
+      allSlides[0].style.display = 'none';
     }
   }
 }
@@ -91,6 +117,12 @@ function cantGoYet() {
   var question4answers = document.getElementsByClassName('question4');
   var question5answers = document.getElementsByClassName('question5');
   var question6answers = document.getElementsByClassName('question6');
+  var question7answers = document.getElementsByClassName('question7');
+  var question8answers = document.getElementsByClassName('question8');
+  var question9answers = document.getElementsByClassName('question9');
+  var question10answers = document.getElementsByClassName('question10');
+  var question11answers = document.getElementsByClassName('question11');
+  var question12answers = document.getElementsByClassName('question12');
 
   var scoreLocation = document.querySelector('#right');
   var wrongLocation = document.querySelector('#wrong');
@@ -248,6 +280,10 @@ function cantGoYet() {
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
         alert('Wrong!');
         checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk3.mp3';
+          soundLocation.play();
+        }
       }
     }
   } else if (counter == 6) {
@@ -278,6 +314,78 @@ function cantGoYet() {
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
         alert('Wrong!');
         checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk4.mp3';
+          soundLocation.play();
+        }
+      }
+    }
+  } else if (counter == 7) {
+    if (
+      question7answers[0].checked == false && // I simply repeat these steps for each number of the counter
+      question7answers[1].checked == false && // (again, each number representing a different slide)
+      question7answers[2].checked == false &&
+      question7answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question7answers[2].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question7answers[0].disabled = true;
+        question7answers[1].disabled = true;
+        question7answers[2].disabled = true;
+        question7answers[3].disabled = true;
+      } else {
+        question7answers[0].disabled = true;
+        question7answers[1].disabled = true;
+        question7answers[2].disabled = true;
+        question7answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk5.mp3';
+          soundLocation.play();
+        }
+      }
+    }
+  } else if (counter == 8) {
+    if (
+      question8answers[0].checked == false &&
+      question8answers[1].checked == false &&
+      question8answers[2].checked == false &&
+      question8answers[3].checked == false
+    ) {
+      button1Location.style.display = 'none';
+    } else {
+      button1Location.style.display = 'block';
+      button2Location.style.display = 'none';
+      if (question8answers[0].checked == true) {
+        scoreCounter += Number('1');
+        scoreLocation.innerText = 'Right: ' + scoreCounter;
+        alert('Correct!');
+        question8answers[0].disabled = true;
+        question8answers[1].disabled = true;
+        question8answers[2].disabled = true;
+        question8answers[3].disabled = true;
+      } else {
+        question8answers[0].disabled = true;
+        question8answers[1].disabled = true;
+        question8answers[2].disabled = true;
+        question8answers[3].disabled = true;
+        wrongCounter += Number('1');
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        alert('Wrong!');
+        checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk3.mp3';
+          soundLocation.play();
+        }
       }
     }
   }
@@ -296,4 +404,11 @@ function checkLoss() {
 
 function backHome() {
   location.reload();
+}
+
+vidLocation.addEventListener('ended', backToStatic);
+function backToStatic() {
+  tvLocation.style.backgroundImage =
+    "url('http://media0.giphy.com/media/OVlFjmEDhx9rG/giphy.gif')";
+  vidLocation.src = '';
 }
