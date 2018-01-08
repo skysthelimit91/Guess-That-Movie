@@ -1,5 +1,5 @@
 body {
-  background-color: #0073e5;
+  background-color: #009999;
   display: flex;
   overflow: hidden;
 }
@@ -13,16 +13,17 @@ body {
   margin-top: 57px;
 }
 .gameover {
-  background-image: url(https://vignette.wikia.nocookie.net/epicrapbattlesofhistory/images/3/3c/Film_reel.gif/revision/latest?cb=20160128012524);
+  background-image: url('https://i.ytimg.com/vi/vJaAy3jmEx8/maxresdefault.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .title {
-  color: #7ddc1f;
+  color: #ff3333;
   font-family: 'Courgette', cursive;
   display: flex;
   align-self: center;
+  background-color: white;
 }
 
 #tv {
@@ -54,10 +55,10 @@ body {
   margin-left: 255px;
 }
 #tvholder {
-  border-color: #7ddc1f;
+  border-color: black;
   border-style: solid;
   border-radius: 30px;
-  background-color: orange;
+  background-color: #ff3333;
   width: 400px;
   height: 360px;
   display: flex;
@@ -66,7 +67,7 @@ body {
   margin-left: 80px;
 }
 #tvknob {
-  border-color: #7ddc1f;
+  border-color: black;
   border-style: dotted;
   border-radius: 50px;
   background-color: white;
@@ -75,7 +76,7 @@ body {
   margin-left: 5px;
 }
 #table {
-  border-color: white;
+  border-color: black;
   border-style: solid;
   display: flex;
   width: 600px;
@@ -83,10 +84,10 @@ body {
   align-items: flex-end;
 }
 .legs {
-  border-color: white;
+  border-color: black;
   border-style: solid;
   height: 150px;
-  background-color: white;
+  background-color: #ff3333;
   display: flex;
   position: absolute;
 }
@@ -98,9 +99,9 @@ body {
   width: 100px;
 }
 #underside {
-  border-color: white;
+  border-color: black;
   border-style: none;
-  background-color: white;
+  background-color: #ff3333;
   height: 58px;
   width: 600px;
   display: flex;
@@ -108,13 +109,12 @@ body {
   align-self: flex-start;
 }
 #questionholder {
-  border-color: orange;
   border-style: solid;
-  width: 400px;
-  height: 500px;
+  width: 350px;
+  height: 350px;
   position: fixed;
   margin-left: 950px;
-  background-color: orange;
+  background-color: #ff3333;
   align-content: center;
 }
 .vidholder {
@@ -133,8 +133,6 @@ body {
   position: fixed;
 }
 .slideShow {
-  border-color: black;
-  border-style: solid;
   position: fixed;
   display: none;
 }
@@ -150,11 +148,16 @@ body {
 }
 #right {
   position: fixed;
-  color: orange;
+  color: white;
 }
 #wrong {
   position: fixed;
-  color: orange;
+  color: red;
   padding-top: 40px;
 }
-
+#tryAgain {
+  position: fixed;
+  margin-top: 500px;
+  margin-left: 500px;
+  display: none;
+}

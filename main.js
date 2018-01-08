@@ -12,6 +12,7 @@ var nextButton = document.getElementById('button1');
 var vidLocation = document.getElementById('vid');
 var tvLocation = document.getElementById('tv');
 var allSlides = document.getElementsByClassName('slideShow');
+var tryAgainLocation = document.getElementById('tryAgain');
 
 var counter = 0; //I use this counter throughout my code in order to let my functions know when (on which slide) they
 //need to execute certain code
@@ -21,6 +22,7 @@ button1Location.addEventListener('click', countNumber);
 button1Location.addEventListener('click', nextQuestion);
 button2Location.addEventListener('click', cantGoYet); //My submit button only needs to be able to have access to this one function
 button1Location.addEventListener('click', cantGoYet); //because I don't want it increasing my counter when clicked
+tryAgainLocation.addEventListener('click', backHome); // This try again button reloads the document, thereby starting the game over
 
 function countNumber() {
   //everytime the 'Next' button is clicked, a counter is incremented by 1. When the
@@ -82,6 +84,7 @@ function nextQuestion() {
 
 function cantGoYet() {
   var radioLocation = document.querySelectorAll('input');
+  var soundLocation = document.querySelector('audio');
   var question1answers = document.getElementsByClassName('question1');
   var question2answers = document.getElementsByClassName('question2');
   var question3answers = document.getElementsByClassName('question3');
@@ -148,7 +151,6 @@ function cantGoYet() {
         wrongCounter += Number('1');
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
         alert('Wrong!');
-        checkLoss();
       }
     }
   } else if (counter == 3) {
@@ -179,6 +181,9 @@ function cantGoYet() {
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
         alert('Wrong!');
         checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.play();
+        }
       }
     }
   } else if (counter == 4) {
@@ -209,6 +214,10 @@ function cantGoYet() {
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
         alert('Wrong!');
         checkLoss();
+        if (wrongCounter == 3) {
+          soundLocation.src = 'mk2.mp3';
+          soundLocation.play();
+        }
       }
     }
   } else if (counter == 5) {
@@ -222,7 +231,7 @@ function cantGoYet() {
     } else {
       button1Location.style.display = 'block';
       button2Location.style.display = 'none';
-      if (question5answers[0].checked == true) {
+      if (question5answers[3].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
         alert('Correct!');
@@ -275,13 +284,16 @@ function cantGoYet() {
 }
 
 function checkLoss() {
-  if (wrongCounter >= 3) {
-    var soundLocation = document.querySelector('audio');
+  if (wrongCounter == 3) {
     var bodylocation = document.querySelector('body');
     bodylocation.classList.add('gameover');
     var containerLocation = document.getElementById('container');
     container.style.display = 'none';
     vidLocation.pause();
-    soundLocation.loop = true;
+    tryAgainLocation.style.display = 'block';
   }
+}
+
+function backHome() {
+  location.reload();
 }
