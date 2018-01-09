@@ -15,7 +15,7 @@ body {
   margin-top: 57px;
 }
 .gameover {
-  background-image: url('http://codplayercards.com/wp-content/uploads/2014/10/gameover8bit.png');
+  background-image: url('https://i.imgur.com/zkt4QUM.png?1');
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
@@ -183,14 +183,15 @@ body {
 #tryAgain {
   position: fixed;
   margin-top: 700px;
-  margin-left: 750px;
+  margin-left: 428px;
   display: none;
+  background-color: rgb(255, 51, 51);
+  border-style: none;
+
 }
 #indexTitle {
   padding-top: 100px;
   padding-left: 440px;
-  text-decoration: underline;
-  text-decoration-color: white;
   display: flex;
   animation: fadein 1s;
 
@@ -210,11 +211,12 @@ body {
   color: white;
   position: fixed;
   flex-wrap: 
-  width: 500px;
+  width: 470px;
   font-size: 20pt;
   padding-top: 220px;
-  padding-left: 290px;
+  padding-left: 270px;
   margin-right: 160px;
+  align-content: center;
 }
 #indexH2 {
   padding-top: 350px;

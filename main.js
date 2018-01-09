@@ -13,6 +13,29 @@ var videoSources = [
   './VIDEOS/kbv2.mp4',
   './VIDEOS/powers.mp4',
 ];
+
+// var questions = [
+//   {
+//     videosrc: '',
+//     question: '',
+//     choices: ['Choice 1', 'Choice 2', 'Choice 3'],
+//     answer: 1,
+//   },
+//   {
+//     videosrc: '',
+//     question: '',
+//     choices: ['Choice 1', 'Choice 2', 'Choice 3'],
+//     answer: 1,
+//   },
+//   {
+//     videosrc: '',
+//     question: '',
+//     choices: ['Choice 1', 'Choice 2', 'Choice 3'],
+//     answer: 1,
+//   },
+// ];
+// questions[Math.floor(Math.random() * questions.length)];
+
 var button1Location = document.getElementById('button1');
 var button2Location = document.getElementById('button2');
 var nextButton = document.getElementById('button1');
@@ -195,6 +218,7 @@ function cantGoYet() {
   var question10answers = document.getElementsByClassName('question10');
   var question11answers = document.getElementsByClassName('question11');
   var question12answers = document.getElementsByClassName('question12');
+  var question13answers = document.getElementsByClassName('question13');
 
   var scoreLocation = document.querySelector('#right');
   var wrongLocation = document.querySelector('#wrong');
@@ -211,25 +235,29 @@ function cantGoYet() {
       button1Location.style.display = 'block'; //otherwise, my next button is displayed and the user can proceed to the next question
       button2Location.style.display = 'none';
       if (question1answers[3].checked == true) {
-        //if the correct answer is selected, increment the score counter by 1
+        //if the correct answer is selected at the time the submit button is clicked, increment the right score counter by 1
         scoreCounter += Number('1');
-        scoreLocation.innerText = 'Right: ' + scoreCounter;
-        question1answers[0].disabled = true;
-        question1answers[1].disabled = true;
+        scoreLocation.innerText = 'Right: ' + scoreCounter; // and reflect the right score in the document
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
+        question1answers[0].disabled = true; //once a radio button has been selected and answer submitted, disable
+        question1answers[1].disabled = true; //all radio buttons regardless of whether or not the answer is correct
         question1answers[2].disabled = true;
         question1answers[3].disabled = true;
       } else {
-        question1answers[0].disabled = true;
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
+        question1answers[0].disabled = true; //if the wrong answer is selected, increment the wrong score counter by 1
         question1answers[1].disabled = true;
         question1answers[2].disabled = true;
         question1answers[3].disabled = true;
         wrongCounter += Number('1');
-        wrongLocation.innerText = 'Wrong: ' + wrongCounter;
+        wrongLocation.innerText = 'Wrong: ' + wrongCounter; //and reflect the wrong score in the document
       }
     }
   } else if (counter == 2) {
     if (
-      question2answers[0].checked == false && // I simply repeat these steps for each number of the counter
+      question2answers[0].checked == false && // I simply repeat the above steps for each number of the counter
       question2answers[1].checked == false && // (again, each number representing a different slide)
       question2answers[2].checked == false &&
       question2answers[3].checked == false
@@ -241,11 +269,15 @@ function cantGoYet() {
       if (question2answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question2answers[0].disabled = true;
         question2answers[1].disabled = true;
         question2answers[2].disabled = true;
         question2answers[3].disabled = true;
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question2answers[0].disabled = true;
         question2answers[1].disabled = true;
         question2answers[2].disabled = true;
@@ -268,11 +300,15 @@ function cantGoYet() {
       if (question3answers[2].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question3answers[0].disabled = true;
         question3answers[1].disabled = true;
         question3answers[2].disabled = true;
         question3answers[3].disabled = true;
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question3answers[0].disabled = true;
         question3answers[1].disabled = true;
         question3answers[2].disabled = true;
@@ -281,8 +317,10 @@ function cantGoYet() {
         wrongLocation.innerText = 'Wrong: ' + wrongCounter;
         checkLoss();
         if (wrongCounter == 3) {
-          alert('3 Wrong! You lose!');
-          soundLocation.play();
+          //Now that the click counter has reached a high enough level to possibly lose,
+          alert('3 Wrong! You lose!'); //check to see if the wrong counter has reached 3, and if so, let the user know they lost,
+          soundlocation.src = './MUSIC/mk.mp3';
+          soundLocation.play(); // Then play the taunt mp3
         }
       }
     }
@@ -300,11 +338,15 @@ function cantGoYet() {
       if (question4answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question4answers[0].disabled = true;
         question4answers[1].disabled = true;
         question4answers[2].disabled = true;
         question4answers[3].disabled = true;
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question4answers[0].disabled = true;
         question4answers[1].disabled = true;
         question4answers[2].disabled = true;
@@ -314,8 +356,8 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = './MUSIC/mk2.mp3';
-          soundLocation.play();
+          soundLocation.src = './MUSIC/mk2.mp3'; //depending on which question the user gets game over on, there
+          soundLocation.play(); //will be a different mp3 file playing to taunt them
         }
       }
     }
@@ -333,11 +375,15 @@ function cantGoYet() {
       if (question5answers[3].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question5answers[0].disabled = true;
         question5answers[1].disabled = true;
         question5answers[2].disabled = true;
         question5answers[3].disabled = true;
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question5answers[0].disabled = true;
         question5answers[1].disabled = true;
         question5answers[2].disabled = true;
@@ -366,11 +412,15 @@ function cantGoYet() {
       if (question6answers[1].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question6answers[0].disabled = true;
         question6answers[1].disabled = true;
         question6answers[2].disabled = true;
         question6answers[3].disabled = true;
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question6answers[0].disabled = true;
         question6answers[1].disabled = true;
         question6answers[2].disabled = true;
@@ -399,11 +449,15 @@ function cantGoYet() {
       if (question7answers[2].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question7answers[0].disabled = true;
         question7answers[1].disabled = true;
         question7answers[2].disabled = true;
         question7answers[3].disabled = true;
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question7answers[0].disabled = true;
         question7answers[1].disabled = true;
         question7answers[2].disabled = true;
@@ -432,11 +486,15 @@ function cantGoYet() {
       if (question8answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question8answers[0].disabled = true;
         question8answers[1].disabled = true;
         question8answers[2].disabled = true;
         question8answers[3].disabled = true;
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question8answers[0].disabled = true;
         question8answers[1].disabled = true;
         question8answers[2].disabled = true;
@@ -465,11 +523,15 @@ function cantGoYet() {
       if (question9answers[3].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question9answers[0].disabled = true;
         question9answers[1].disabled = true;
         question9answers[2].disabled = true;
         question9answers[3].disabled = true;
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question9answers[0].disabled = true;
         question9answers[1].disabled = true;
         question9answers[2].disabled = true;
@@ -498,17 +560,15 @@ function cantGoYet() {
       if (question10answers[1].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question10answers[0].disabled = true;
         question10answers[1].disabled = true;
         question10answers[2].disabled = true;
         question10answers[3].disabled = true;
-        checkWin();
-        if (scoreCounter == 10) {
-          alert('10 Right! You win!');
-          soundLocation.src = './MUSIC/victory.mp3';
-          soundLocation.play();
-        }
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question10answers[0].disabled = true;
         question10answers[1].disabled = true;
         question10answers[2].disabled = true;
@@ -537,17 +597,15 @@ function cantGoYet() {
       if (question11answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question11answers[0].disabled = true;
         question11answers[1].disabled = true;
         question11answers[2].disabled = true;
         question11answers[3].disabled = true;
-        checkWin();
-        if (scoreCounter == 10) {
-          alert('10 Right! You win!');
-          soundLocation.src = './MUSIC/victory.mp3';
-          soundLocation.play();
-        }
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question11answers[0].disabled = true;
         question11answers[1].disabled = true;
         question11answers[2].disabled = true;
@@ -576,17 +634,15 @@ function cantGoYet() {
       if (question12answers[2].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question12answers[0].disabled = true;
         question12answers[1].disabled = true;
         question12answers[2].disabled = true;
         question12answers[3].disabled = true;
-        checkWin();
-        if (scoreCounter == 10) {
-          alert('10 Right! You win!');
-          soundLocation.src = './MUSIC/victory.mp3';
-          soundLocation.play();
-        }
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question12answers[0].disabled = true;
         question12answers[1].disabled = true;
         question12answers[2].disabled = true;
@@ -615,17 +671,18 @@ function cantGoYet() {
       if (question13answers[0].checked == true) {
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
+        soundLocation.src = './MUSIC/sonic.mp3';
+        soundLocation.play();
         question13answers[0].disabled = true;
         question13answers[1].disabled = true;
         question13answers[2].disabled = true;
         question13answers[3].disabled = true;
         checkWin();
-        if (scoreCounter == 10) {
-          alert('10 Right! You win!');
-          soundLocation.src = './MUSIC/victory.mp3';
-          soundLocation.play();
-        }
+        soundLocation.src = './MUSIC/victory.mp3';
+        soundLocation.play();
       } else {
+        soundLocation.src = './MUSIC/Wrongsound.mp3';
+        soundLocation.play();
         question13answers[0].disabled = true;
         question13answers[1].disabled = true;
         question13answers[2].disabled = true;
@@ -644,35 +701,40 @@ function cantGoYet() {
 }
 
 function checkLoss() {
+  //This is the function that checks to see if the loser has lost.
   if (wrongCounter == 3) {
-    var bodylocation = document.querySelector('body');
+    //If they have lost, add a class list of gameover to the body.
+    var bodylocation = document.querySelector('body'); //The gameover class list has a background image that says game over
     bodylocation.classList.add('gameover');
-    var containerLocation = document.getElementById('container');
-    container.style.display = 'none';
-    vidLocation.pause();
-    tryAgainLocation.style.display = 'block';
+    var containerLocation = document.getElementById('container'); //We also want to use dispaly none to hide our container div
+    container.style.display = 'none'; //so that the game over body is the only thing showing
+    vidLocation.pause(); //We'll also pause the video so it doesn't interfere with the sound of our taunt mp3
+    tryAgainLocation.style.display = 'block'; //Let our user try again by revealing our button that reloads the document
   }
 }
 
 function checkWin() {
-  if (scoreCounter == 10) {
-    var bodylocation = document.querySelector('body');
+  //This function checks to see if the user has won
+  if (scoreCounter >= 10 && wrongCounter < 3) {
+    //If they have won, add a class list of gamewinner to the body.
+    var bodylocation = document.querySelector('body'); //The gamewinner class list has a background image that says you win
     bodylocation.classList.add('gamewinner');
     var containerLocation = document.getElementById('container');
-    container.style.display = 'none';
-    vidLocation.pause();
-    tryAgainLocation.innerText = 'Play Again?';
-    tryAgainLocation.style.display = 'block';
-  }
+    container.style.display = 'none'; //We also want to use dispaly none to hide our container div
+    vidLocation.pause(); //so that the game over body is the only thing showing
+    tryAgainLocation.innerText = 'Play Again?'; //We'll also pause the video so it doesn't interfere with the sound of our victory mp3
+    tryAgainLocation.style.display = 'block'; //Let our user try again by revealing our button that reloads the document
+  } //This time it will say try again
 }
 
 function backHome() {
-  location.reload();
+  location.reload(); //this function reloads the document
 }
 
-vidLocation.addEventListener('ended', backToStatic);
+vidLocation.addEventListener('ended', backToStatic); //this function makes it so that when the video finishes playing,
 function backToStatic() {
+  //the container holding the tv screen has its background image set back to the gif of static
   tvLocation.style.backgroundImage =
     "url('http://media0.giphy.com/media/OVlFjmEDhx9rG/giphy.gif')";
-  vidLocation.src = '';
-}
+  vidLocation.src = ''; //and the video element goes back to being blank, thereby no longer displaying a still image of the
+} //final frame of the video that was previously playing
