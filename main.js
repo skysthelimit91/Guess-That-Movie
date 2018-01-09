@@ -1,17 +1,17 @@
 var videoSources = [
-  'godfather2.mp4',
-  'GranTorino.mp4',
-  'goodwillhunting.mp4',
-  'Terminator2.mp4',
-  'demolitionman.mp4',
-  'Rushhour.mp4',
-  'Independence.mp4',
-  'Goodfellas.mp4',
-  'princess.mp4',
-  'suspects.mp4',
-  'fifthelement.mp4',
-  'kbv2.mp4',
-  'powers.mp4',
+  './VIDEOS/godfather2.mp4',
+  './VIDEOS/GranTorino.mp4',
+  './VIDEOS/goodwillhunting.mp4',
+  './VIDEOS/Terminator2.mp4',
+  './VIDEOS/demolitionman.mp4',
+  './VIDEOS/Rushhour.mp4',
+  './VIDEOS/Independence.mp4',
+  './VIDEOS/Goodfellas.mp4',
+  './VIDEOS/princess.mp4',
+  './VIDEOS/suspects.mp4',
+  './VIDEOS/fifthelement.mp4',
+  './VIDEOS/kbv2.mp4',
+  './VIDEOS/powers.mp4',
 ];
 var button1Location = document.getElementById('button1');
 var button2Location = document.getElementById('button2');
@@ -211,6 +211,7 @@ function cantGoYet() {
       button1Location.style.display = 'block'; //otherwise, my next button is displayed and the user can proceed to the next question
       button2Location.style.display = 'none';
       if (question1answers[3].checked == true) {
+        //if the correct answer is selected, increment the score counter by 1
         scoreCounter += Number('1');
         scoreLocation.innerText = 'Right: ' + scoreCounter;
         question1answers[0].disabled = true;
@@ -313,7 +314,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk2.mp3';
+          soundLocation.src = './MUSIC/mk2.mp3';
           soundLocation.play();
         }
       }
@@ -346,7 +347,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk3.mp3';
+          soundLocation.src = './MUSIC/mk3.mp3';
           soundLocation.play();
         }
       }
@@ -379,7 +380,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk4.mp3';
+          soundLocation.src = './MUSIC/mk4.mp3';
           soundLocation.play();
         }
       }
@@ -412,7 +413,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk5.mp3';
+          soundLocation.src = './MUSIC/mk5.mp3';
           soundLocation.play();
         }
       }
@@ -445,7 +446,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk3.mp3';
+          soundLocation.src = './MUSIC/nelson.mp3';
           soundLocation.play();
         }
       }
@@ -478,7 +479,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk3.mp3';
+          soundLocation.src = './MUSIC/mk3.mp3';
           soundLocation.play();
         }
       }
@@ -504,7 +505,7 @@ function cantGoYet() {
         checkWin();
         if (scoreCounter == 10) {
           alert('10 Right! You win!');
-          soundLocation.src = 'victory.mp3';
+          soundLocation.src = './MUSIC/victory.mp3';
           soundLocation.play();
         }
       } else {
@@ -517,7 +518,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk3.mp3';
+          soundLocation.src = './MUSIC/mk3.mp3';
           soundLocation.play();
         }
       }
@@ -543,7 +544,7 @@ function cantGoYet() {
         checkWin();
         if (scoreCounter == 10) {
           alert('10 Right! You win!');
-          soundLocation.src = 'victory.mp3';
+          soundLocation.src = './MUSIC/victory.mp3';
           soundLocation.play();
         }
       } else {
@@ -556,7 +557,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk3.mp3';
+          soundLocation.src = './MUSIC/mk3.mp3';
           soundLocation.play();
         }
       }
@@ -582,7 +583,7 @@ function cantGoYet() {
         checkWin();
         if (scoreCounter == 10) {
           alert('10 Right! You win!');
-          soundLocation.src = 'victory.mp3';
+          soundLocation.src = './MUSIC/victory.mp3';
           soundLocation.play();
         }
       } else {
@@ -595,7 +596,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk3.mp3';
+          soundLocation.src = './MUSIC/mk3.mp3';
           soundLocation.play();
         }
       }
@@ -621,7 +622,7 @@ function cantGoYet() {
         checkWin();
         if (scoreCounter == 10) {
           alert('10 Right! You win!');
-          soundLocation.src = 'victory.mp3';
+          soundLocation.src = './MUSIC/victory.mp3';
           soundLocation.play();
         }
       } else {
@@ -634,7 +635,7 @@ function cantGoYet() {
         checkLoss();
         if (wrongCounter == 3) {
           alert('3 Wrong! You lose!');
-          soundLocation.src = 'mk4.mp3';
+          soundLocation.src = './MUSIC/mk4.mp3';
           soundLocation.play();
         }
       }
